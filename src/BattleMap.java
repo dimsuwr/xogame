@@ -47,6 +47,7 @@ public class BattleMap extends JPanel {
 
         System.out.println(cellX + " " + cellY);
         repaint();
+        new GameOver();
     }
 
     @Override
@@ -91,13 +92,16 @@ public class BattleMap extends JPanel {
     }
 
     private void drawO(Graphics g, int cellX, int cellY) {
+        Graphics2D g2D = (Graphics2D) g;
+        g2D.setStroke(new BasicStroke(5));
         g.setColor(new Color(0, 0, 255));
         g.drawOval(cellX * cellWidth, cellY * cellHeight, cellWidth, cellHeight);
 
     }
 
     private void drawX(Graphics g, int cellX, int cellY) {
-
+        Graphics2D g2D = (Graphics2D) g;
+        g2D.setStroke(new BasicStroke(5));
         g.setColor(new Color(255, 3, 0));
         g.drawLine(cellX * cellWidth, cellY * cellHeight,
                 (cellX + 1) * cellWidth, (cellY + 1) * cellHeight);
@@ -115,7 +119,6 @@ public class BattleMap extends JPanel {
         isInit = true;
         repaint();
     }
-
 
 
 

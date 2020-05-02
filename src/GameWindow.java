@@ -6,8 +6,8 @@ import java.awt.*;
 public class GameWindow extends JFrame {
     private static final int WIN_HEIGHT = 555;
     private static final int WIN_WIDTH  = 507;
-    private static final int WIN_POS_X  = 600;
-    private static final int WIN_POS_Y  = 400;
+    private static final int WIN_POS_X  = 700;
+    private static final int WIN_POS_Y  = 200;
 
     private StartNewGameWindow startNewGameWindow;
     private BattleMap field;
@@ -15,7 +15,7 @@ public class GameWindow extends JFrame {
     public GameWindow(){
         setBounds(WIN_POS_X,WIN_POS_Y,WIN_WIDTH,WIN_HEIGHT);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setTitle("TicTacToe");
+        setTitle("Крестики-нолики");
         setResizable(false);
 
         startNewGameWindow = new StartNewGameWindow(this);
@@ -23,14 +23,14 @@ public class GameWindow extends JFrame {
         add(field,BorderLayout.CENTER);
 
         JPanel bottomPanel = new JPanel(new GridLayout(1,2));
-        JButton btnNewGame = new JButton("Start new game");
+        JButton btnNewGame = new JButton("Старт новой игры");
         bottomPanel.add(btnNewGame);
 
         btnNewGame.addActionListener(e->{
             startNewGameWindow.setVisible(true);
         });
 
-        JButton btnExit = new JButton("Exit");
+        JButton btnExit = new JButton("Выход");
         bottomPanel.add(btnExit);
 
         btnExit.addActionListener(e->{

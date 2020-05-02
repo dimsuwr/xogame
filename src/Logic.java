@@ -22,12 +22,12 @@ public class Logic {
         gameFinished = true;
         printMap();
         if (checkWinLines(DOT_X)) {
-            System.out.println("Ты Супер победитель!");
+           // System.out.println("Ты Супер победитель!");
             return;
         }
 
         if (isFull()) {
-            System.out.println("Ничья...");
+           // System.out.println("Ничья...");
             return;
         }
 
@@ -39,7 +39,7 @@ public class Logic {
             return;
         }
         if (isFull()) {
-            System.out.println("Ничья...");
+            //System.out.println("Ничья...");
             return;
         }
         gameFinished = false;
