@@ -6,8 +6,8 @@ import java.awt.*;
 public class StartNewGameWindow extends JFrame {
     private static final int WIN_HEIGHT = 450;
     private static final int WIN_WIDTH  = 400;
-    private static final int WIN_POS_X  = 650;
-    private static final int WIN_POS_Y  = 450;
+    private static final int WIN_POS_X  = 750;
+    private static final int WIN_POS_Y  = 250;
     private static final int MIN_FIELD_SIZE  = 3;
     private static final int MAX_FIELD_SIZE  = 10;
     private static final int MIN_WIN_LENGTH = 3;
@@ -26,14 +26,14 @@ public class StartNewGameWindow extends JFrame {
     public StartNewGameWindow(GameWindow gameWindow) {
         this.gameWindow = gameWindow;
         setBounds(WIN_POS_X,WIN_POS_Y,WIN_WIDTH,WIN_HEIGHT);
-        setTitle("TicTacToe");
+        setTitle("Крестики-нолики");
         setResizable(false);
         setLayout(new GridLayout(8,1));
 
         //gameMode
-        add(new JLabel("Choose gameMode:"));
-        jrbHumVsAi = new JRadioButton("Hum vs Ai",true);
-        jrbHumVsHum = new JRadioButton("Hum vs Hum");
+        add(new JLabel("Выберете режим:"));
+        jrbHumVsAi = new JRadioButton("Человек против компьютера",true);
+        jrbHumVsHum = new JRadioButton("Человек против человека");
         gameMode = new ButtonGroup();
         gameMode.add(jrbHumVsAi);
         gameMode.add(jrbHumVsHum);
@@ -42,7 +42,7 @@ public class StartNewGameWindow extends JFrame {
 
         //size
         //dots to win
-        add(new JLabel("Choose field size:"));
+        add(new JLabel("Выберете размер поля:"));
         jsFieldSize = new JSlider(MIN_FIELD_SIZE,MAX_FIELD_SIZE,MIN_FIELD_SIZE);
         add(jsFieldSize);
         jsFieldSize.setMajorTickSpacing(1);
@@ -54,7 +54,7 @@ public class StartNewGameWindow extends JFrame {
             jsWinLength.setMaximum(fieldSize);
         });
 
-        add(new JLabel("Choose winning length:"));
+        add(new JLabel("Выберете победную линию:"));
         jsWinLength = new JSlider(MIN_WIN_LENGTH, MIN_FIELD_SIZE, MIN_WIN_LENGTH);
         add(jsWinLength);
         jsWinLength.setMajorTickSpacing(1);
@@ -63,7 +63,7 @@ public class StartNewGameWindow extends JFrame {
 
 
         //buttonOk
-        JButton btnStartGame = new JButton("Start a game");
+        JButton btnStartGame = new JButton("Старт новой игры");
         add(btnStartGame);
         btnStartGame.addActionListener(e->{
             btnStartGameClick();
